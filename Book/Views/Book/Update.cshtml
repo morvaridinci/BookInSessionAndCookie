@@ -1,0 +1,22 @@
+﻿@model BookViewModel
+
+@using (Html.BeginForm("Update", "Book", FormMethod.Post))
+{
+    <b>Kitap Id</b>
+    @Html.TextBoxFor(x => x.BookId, new { @class = "form-control" })
+    <br />
+    <br />
+    <b>Kitap Adi</b>
+    @Html.TextBoxFor(x => x.BookName, new { @class = "form-control" })
+    <br />
+    <br />
+    <b>Yazar</b>
+    @Html.TextBoxFor(x => x.Author, new { @class = "form-control" })
+    <br />
+    <br />
+    <b>Basım Yılı</b>
+    @Html.TextBoxFor(x => x.PublishedYear, new { @class = "form-control" })
+    <br />
+    <br />
+    <button class="btn btn-info">Güncelle</button>
+} 

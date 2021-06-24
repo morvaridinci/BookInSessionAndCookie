@@ -1,0 +1,13 @@
+﻿@model BookViewModel
+
+<form action="Add" method="Post">
+    <div class="container">
+        <input asp-for="BookId" placeholder="Id" />
+        <input asp-for="BookName" placeholder="Kitap Adı" />
+        <input asp-for="Author" placeholder="Yazar" />
+        <input asp-for="PublishedYear" placeholder="Yayın Yılı" />
+        <input type="submit" />
+    </div>
+</form>
+
+ 

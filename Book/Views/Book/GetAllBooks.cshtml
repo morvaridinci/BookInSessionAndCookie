@@ -1,0 +1,42 @@
+﻿@model List<BookViewModel>
+
+
+<form>
+    <table class="table table-secondary table-sm">
+        <tr>
+            <th><b>Id</b></th>
+            <th><b>Kitap İsmi</b></th>
+            <th><b>Kitap Yazarı</b></th>
+            <th><b>Yayın Yılı</b></th>
+            <th></th>
+        </tr>
+
+
+        @foreach (var item in Model)
+        {
+            <tr class="table-light">
+                <td> @item.BookId </td>
+                <td> @item.BookName </td>
+                <td> @item.Author </td>
+                <td> @item.PublishedYear </td>
+                <td>
+                    @using (Html.BeginForm())
+                    {
+                        <a asp-action="Favorite" asp-controller="Book" asp-route-bookName="@item.BookName" id="favorite" class="btn btn-outline-dark btn-sm">
+                            Favorilere Ekle
+                        </a>
+
+                        <a asp-action="Delete" asp-controller="Book" asp-route-bookId="@item.BookId" asp-for="BookId" class="btn btn-outline-dark btn-sm">
+                            Sil
+                        </a>
+                        <a asp-action="Update" asp-controller="Book" asp-route-bookId="@item.BookId" class="btn btn-outline-dark btn-sm">
+                            Güncelle
+                        </a>
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+</form>
+
+
